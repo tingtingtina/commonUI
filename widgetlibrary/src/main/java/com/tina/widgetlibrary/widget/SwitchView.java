@@ -151,13 +151,13 @@ public class SwitchView extends View {
         // 绘制底色
         RectF rectF = new RectF(mFrameWidth / 2, mFrameWidth / 2, mWidth - mFrameWidth / 2, mHeight - mFrameWidth / 2);
         mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setColor(switchOn ? mCheckedBackgroundColor : mUncheckedBackgroundColor);
+        mPaint.setColor(switchOn && isEnabled() ? mCheckedBackgroundColor : mUncheckedBackgroundColor);
         canvas.drawRoundRect(rectF, (mHeight - mFrameWidth) / 2, (mHeight - mFrameWidth) / 2, mPaint);
 
         // 绘制边线
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(mFrameWidth);
-        mPaint.setColor(switchOn ? mCheckedFrameColor : mUnCheckedFrameColor);
+        mPaint.setColor(switchOn && isEnabled() ? mCheckedFrameColor : mUnCheckedFrameColor);
         canvas.drawRoundRect(rectF, (mHeight - mFrameWidth) / 2, (mHeight - mFrameWidth) / 2, mPaint);
     }
 
