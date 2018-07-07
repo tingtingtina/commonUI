@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SwitchView">
+        <attr name="frame_width" format="dimension" />
+        <attr name="checked_frame_color" format="color" />
+        <attr name="unchecked_frame_color" format="color" />
+        <attr name="checked_color" format="color" />
+        <attr name="unchecked_color" format="color" />
+        <attr name="checked_background_color" format="color" />
+        <attr name="unchecked_background_color" format="color" />
+        <attr name="slider_radius" format="dimension" />
+        <attr name="disable_color" format="color" />
+        <attr name="default_checked" format="boolean" />
+    </declare-styleable>
+</resources>

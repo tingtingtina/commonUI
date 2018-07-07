@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:orientation="vertical"
-    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="常用自定义控件" />
+    tools:context=".activity.CommonUIActivity">
 
+    <com.tina.widgetlibrary.widget.SwitchView
+        android:id="@+id/switchView"
+        style="@style/SwitchView"
+        app:default_checked="true" />
 </LinearLayout>

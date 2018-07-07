@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <style name="SwitchView">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="checked_background_color">#FF0098EF</item>
+        <item name="checked_color">#FFFFFF</item>
+        <item name="checked_frame_color">#FF0098EF</item>
+        <item name="unchecked_frame_color">#28000000</item>
+        <item name="frame_width">1dp</item>
+        <item name="slider_radius">30dp</item>
+        <item name="unchecked_background_color">#FFFFFF</item>
+        <item name="unchecked_color">#DCDCDC</item>
+    </style>
+</resources>
