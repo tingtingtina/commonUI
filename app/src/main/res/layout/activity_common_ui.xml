@@ -6,11 +6,59 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:orientation="vertical"
-
     tools:context=".activity.CommonUIActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="SwitchView"
+        android:textColor="#000000" />
 
     <com.tina.widgetlibrary.widget.SwitchView
         android:id="@+id/switchView"
         style="@style/SwitchView"
         app:default_checked="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:text="CircleProgress"
+        android:textColor="#000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+
+        <com.tina.widgetlibrary.widget.progress.CircleProgress
+            android:id="@+id/circleProgress"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:cp_base_color="#CCCCCC"
+            app:cp_base_width="1dp"
+            app:cp_padding="20dp"
+            app:cp_progress_color="@color/colorAccent"
+            app:cp_progress_width="5dp"
+            app:cp_span_angle="260"
+            app:cp_start_angle="-220"
+            app:cp_textSize="14dp"
+            app:max="100"
+            app:progress="50" />
+
+        <com.tina.widgetlibrary.widget.progress.CircleProgress
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:cp_base_color="#CCCCCC"
+            app:cp_base_width="5dp"
+            app:cp_padding="20dp"
+            app:cp_progress_color="@color/colorAccent"
+            app:cp_progress_width="5dp"
+            app:cp_textSize="14dp"
+            app:max="360"
+            app:progress="50" />
+    </LinearLayout>
 </LinearLayout>
