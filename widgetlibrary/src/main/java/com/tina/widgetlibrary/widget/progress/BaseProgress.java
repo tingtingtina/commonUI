@@ -1,13 +1,11 @@
 package com.tina.widgetlibrary.widget.progress;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
 import android.support.v4.math.MathUtils;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.animation.DecelerateInterpolator;
 
 import com.tina.widgetlibrary.R;
 
@@ -18,24 +16,13 @@ import com.tina.widgetlibrary.R;
  */
 public class BaseProgress extends View {
 
-    /**
-     * Duration of smooth progress animations.
-     */
-    private static final int PROGRESS_ANIM_DURATION = 200;
-
-    /**
-     * Interpolator used for smooth progress animations.
-     */
-    private static final DecelerateInterpolator PROGRESS_ANIM_INTERPOLATOR =
-            new DecelerateInterpolator();
-
     public int mWidth;
     public int mHeight;
-    protected float mMin;
+    protected int mMin;
     private boolean mMinInitialized;
-    protected float mMax;
+    protected int mMax;
     private boolean mMaxInitialized;
-    protected float mProgress;
+    protected int mProgress;
 
     public BaseProgress(Context context) {
         this(context, null);
@@ -54,10 +41,9 @@ public class BaseProgress extends View {
         initProgress();
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.BaseProgress, defStyleAttr, 0);
-        setMin(a.getFloat(R.styleable.BaseProgress_min, mMin));
-        setMax(a.getFloat(R.styleable.BaseProgress_max, mMax));
-
-        setProgress(a.getFloat(R.styleable.BaseProgress_progress, mProgress));
+        setMin(a.getInt(R.styleable.BaseProgress_min, mMin));
+        setMax(a.getInt(R.styleable.BaseProgress_max, mMax));
+        setProgress(a.getInt(R.styleable.BaseProgress_progress, mProgress));
 
         a.recycle();
     }
@@ -74,7 +60,7 @@ public class BaseProgress extends View {
      * @param min the lower range of this progress bar
      * @see #getMin()
      */
-    public synchronized void setMin(float min) {
+    public synchronized void setMin(int min) {
         if (mMaxInitialized) {
             if (min > mMax) {
                 min = mMax;
@@ -100,7 +86,7 @@ public class BaseProgress extends View {
      * @param max the upper range of this progress bar
      * @see #getMax()
      */
-    public synchronized void setMax(float max) {
+    public synchronized void setMax(int max) {
         if (mMinInitialized) {
             if (max < mMin) {
                 max = mMin;
@@ -123,25 +109,25 @@ public class BaseProgress extends View {
     /**
      * <p>Return the lower limit of this progress bar's range.</p>
      *
-     * @return a positive float
+     * @return a positive int
      */
-    public synchronized float getMin() {
+    public synchronized int getMin() {
         return mMin;
     }
 
     /**
      * <p>Return the upper limit of this progress bar's range.</p>
      *
-     * @return a positive float
+     * @return a positive int
      **/
-    public synchronized float getMax() {
+    public synchronized int getMax() {
         return mMax;
     }
 
     /**
      * @param progress the new progress, between {@link #getMin()} and {@link #getMax()}
      */
-    public void setProgress(float progress) {
+    public void setProgress(int progress) {
         progress = MathUtils.clamp(progress, mMin, mMax);
 
         if (progress == mProgress) {
@@ -149,29 +135,15 @@ public class BaseProgress extends View {
             return;
         }
         refreshProgress(progress);
-//        mProgress = progress;
     }
 
-    private ValueAnimator mAnimator;
-
-    public float getProgress() {
+    public int getProgress() {
         return mProgress;
     }
 
-    private void refreshProgress(float progress) {
-        mAnimator = ValueAnimator.ofFloat(mProgress, progress);
-        mAnimator.setDuration(PROGRESS_ANIM_DURATION);
-        mAnimator.setInterpolator(PROGRESS_ANIM_INTERPOLATOR);
-        mAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float value = (float) animation.getAnimatedValue();
-                value = (value > 0.01) ? value : 0;
-                mProgress = value;
-                invalidate();
-            }
-        });
-        mAnimator.start();
+    public void refreshProgress(int progress) {
+        mProgress = progress;
+        invalidate();
     }
 
     @Override

@@ -33,7 +33,6 @@
         android:layout_height="wrap_content"
         android:gravity="center">
 
-
         <com.tina.widgetlibrary.widget.progress.CircleProgress
             android:id="@+id/circleProgress"
             android:layout_width="150dp"
@@ -60,5 +59,36 @@
             app:cp_textSize="14dp"
             app:max="360"
             app:progress="50" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="SeekBar"
+        android:textColor="#000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.tina.widgetlibrary.widget.progress.TSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            app:max="100"
+            app:progress="10"
+            app:seek_base_color="#cccccc"
+            app:seek_height="1dp"
+            app:seek_progress_color="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/tvSeekBarValue"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="0" />
     </LinearLayout>
 </LinearLayout>

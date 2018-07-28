@@ -1,10 +1,13 @@
 package com.tina.commonui.activity;
 
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tina.commonui.BaseActivity;
 import com.tina.commonui.R;
 import com.tina.widgetlibrary.widget.SwitchView;
+import com.tina.widgetlibrary.widget.progress.TSeekBar;
 import com.tina.widgetlibrary.widget.progress.CircleProgress;
 
 import java.util.concurrent.TimeUnit;
@@ -21,8 +24,12 @@ public class CommonUIActivity extends BaseActivity {
     SwitchView mSwitchView;
     @BindView(R.id.circleProgress)
     CircleProgress mCircleProgress;
+    @BindView(R.id.seekBar)
+    TSeekBar mSeekBar;
+    @BindView(R.id.tvSeekBarValue)
+    TextView mTvSeekBarValue;
 
-    private float mProgress = 0;
+    private int mProgress = 0;
 
     public int getLayoutId() {
         return R.layout.activity_common_ui;
@@ -64,5 +71,24 @@ public class CommonUIActivity extends BaseActivity {
 
                     }
                 });
+
+        mSeekBar.setProgress(50);
+        mTvSeekBarValue.setText(mSeekBar.getProgress() + "");
+        mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                mTvSeekBarValue.setText(progress + "");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 }

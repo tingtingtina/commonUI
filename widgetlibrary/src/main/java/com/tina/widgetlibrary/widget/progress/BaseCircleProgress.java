@@ -1,5 +1,6 @@
 package com.tina.widgetlibrary.widget.progress;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -8,6 +9,7 @@ import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.view.animation.DecelerateInterpolator;
 
 import com.tina.widgetlibrary.R;
 
@@ -17,6 +19,17 @@ import com.tina.widgetlibrary.R;
  * Description：
  */
 public class BaseCircleProgress extends BaseProgress {
+
+    /**
+     * Duration of smooth progress animations.
+     */
+    private static final int PROGRESS_ANIM_DURATION = 200;
+
+    /**
+     * Interpolator used for smooth progress animations.
+     */
+    private static final DecelerateInterpolator PROGRESS_ANIM_INTERPOLATOR =
+            new DecelerateInterpolator();
 
     public final static double PI = 3.1415926;
 
@@ -47,6 +60,7 @@ public class BaseCircleProgress extends BaseProgress {
     protected String mSuffixText = "%";
 
     protected float mAngle;
+    private ValueAnimator mAnimator;
 
     public BaseCircleProgress(Context context) {
         this(context, null);
@@ -125,6 +139,22 @@ public class BaseCircleProgress extends BaseProgress {
         invalidate();
     }
 
+    @Override
+    public void refreshProgress(int progress) {
+        mAnimator = ValueAnimator.ofInt(mProgress, progress);
+        mAnimator.setDuration(PROGRESS_ANIM_DURATION);
+        mAnimator.setInterpolator(PROGRESS_ANIM_INTERPOLATOR);
+        mAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int value = (int) animation.getAnimatedValue();
+                value = (value > 0.01) ? value : 0;
+                mProgress = value;
+                invalidate();
+            }
+        });
+        mAnimator.start();
+    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {

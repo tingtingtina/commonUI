@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="BaseProgress">
-        <attr name="max" format="float" />
-        <attr name="min" format="float" />
-        <attr name="progress" format="float" />
+        <attr name="max" format="integer" />
+        <attr name="min" format="integer" />
+        <attr name="progress" format="integer" />
     </declare-styleable>
 
     <declare-styleable name="BaseCircleProgress">
@@ -20,5 +20,12 @@
         <attr name="cp_textColor" format="color"/>
         <attr name="cp_suffix_textSize" format="dimension"/>
         <attr name="cp_suffix_textColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="BaseSeekBar">
+        <attr name="seek_disable_color" format="color" />
+        <attr name="seek_base_color" format="color" />
+        <attr name="seek_progress_color" format="color" />
+        <attr name="seek_height" format="dimension" />
     </declare-styleable>
 </resources>
