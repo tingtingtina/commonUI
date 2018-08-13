@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ColorPickerView">
+        <attr name="cp_color_disk_width" format="dimension" />
+        <attr name="cp_color_disk_padding" format="dimension" />
+        <attr name="cp_outer_ring_color" format="color" />
+        <attr name="cp_outer_ring_width" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.CommonUIActivity"></activity>
+        <activity android:name=".activity.ColorPickerActivity"></activity>
     </application>
 
 </manifest>

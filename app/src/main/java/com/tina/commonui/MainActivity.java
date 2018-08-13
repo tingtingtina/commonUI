@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.WindowManager;
 
+import com.tina.commonui.activity.ColorPickerActivity;
 import com.tina.commonui.activity.CommonUIActivity;
 
 import butterknife.ButterKnife;
@@ -21,11 +21,14 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn1})
+    @OnClick({R.id.btn1, R.id.btn2})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn1:
                 startActivity(new Intent(MainActivity.this, CommonUIActivity.class));
+                break;
+            case R.id.btn2:
+                startActivity(new Intent(MainActivity.this, ColorPickerActivity.class));
                 break;
         }
     }
