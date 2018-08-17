@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RadarView">
+        <attr name="radar_layerCount" format="integer" />
+        <attr name="radar_itemCount" format="integer" />
+        <attr name="radar_layerColor" format="color" />
+        <attr name="radar_layerWidth" format="dimension" />
+        <attr name="radar_valueColor" format="color" />
+        <attr name="radar_padding" format="dimension" />
+        <attr name="radar_titleTextSize" format="dimension" />
+        <attr name="radar_titleTextColor" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:layout_margin="16dp"
-              android:orientation="vertical"
-              tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="常用自定义控件"/>
+        android:text="常用自定义控件" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="颜色选择器"/>
+        android:text="颜色选择器" />
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Radar" />
 </LinearLayout>

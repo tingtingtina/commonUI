@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.tina.widgetlibrary.widget.radar.RadarView
+        android:id="@+id/radarView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:radar_itemCount="5"
+        app:radar_layerCount="5"
+        app:radar_padding="20dp" />
+</LinearLayout>
