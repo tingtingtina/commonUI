@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <com.tina.widgetlibrary.widget.bottombar.BottomBarLayout
+        android:id="@+id/bbLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.tina.widgetlibrary.widget.bottombar.BottomBarItem
+            android:id="@+id/bb1"
+            style="@style/BottomBarItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:bb_iconNormal="@drawable/tab_home_normal"
+            app:bb_iconSelected="@drawable/tab_home_selected"
+            app:bb_itemText="首页" />
+
+        <com.tina.widgetlibrary.widget.bottombar.BottomBarItem
+            android:id="@+id/bb2"
+            style="@style/BottomBarItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:bb_iconNormal="@drawable/tab_home_normal"
+            app:bb_iconSelected="@drawable/tab_home_selected"
+            app:bb_itemText="视频"
+            app:bb_unreadThreshold="999" />
+
+
+        <com.tina.widgetlibrary.widget.bottombar.BottomBarItem
+            android:id="@+id/bb3"
+            style="@style/BottomBarItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:bb_iconNormal="@drawable/tab_home_normal"
+            app:bb_iconSelected="@drawable/tab_home_selected"
+            app:bb_itemText="微头条" />
+
+        <com.tina.widgetlibrary.widget.bottombar.BottomBarItem
+            android:id="@+id/bb4"
+            style="@style/BottomBarItem"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:bb_iconNormal="@drawable/tab_home_normal"
+            app:bb_iconSelected="@drawable/tab_home_selected"
+            app:bb_itemText="我的" />
+    </com.tina.widgetlibrary.widget.bottombar.BottomBarLayout>
+</LinearLayout>

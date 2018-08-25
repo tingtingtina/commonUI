@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-
     <style name="SwitchView">
         <item name="android:layout_width">60dp</item>
         <item name="android:layout_height">30dp</item>
@@ -13,5 +12,17 @@
         <item name="slider_radius">30dp</item>
         <item name="unchecked_background_color">#FFFFFF</item>
         <item name="unchecked_color">#DCDCDC</item>
+    </style>
+
+    <style name="BottomBarItem">
+        <item name="bb_textColorNormal">@android:color/holo_blue_light</item>
+        <item name="bb_textColorSelected">@android:color/holo_blue_dark</item>
+        <item name="bb_openTouchBg">false</item>
+        <item name="bb_itemTextSize">8sp</item>
+        <item name="bb_itemMarginTop">-5dp</item>
+        <item name="bb_iconWidth">40dp</item>
+        <item name="bb_iconHeight">40dp</item>
+        <item name="android:layout_weight">1</item>
+        <!--<item name="bb_touchDrawable="></item>-->
     </style>
 </resources>

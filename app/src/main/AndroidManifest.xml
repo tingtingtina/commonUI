@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".activity.CommonUIActivity" />
         <activity android:name=".activity.ColorPickerActivity" />
-        <activity android:name=".activity.RadarActivity"></activity>
+        <activity android:name=".activity.RadarActivity"/>
+        <activity android:name=".activity.BottomBarActivity"/>
     </application>
 
 </manifest>

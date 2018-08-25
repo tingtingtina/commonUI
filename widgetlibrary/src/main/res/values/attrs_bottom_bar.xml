@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomBarItem">
+        <!--默认状态下的图标-->
+        <attr name="bb_iconNormal" format="reference"/>
+        <!--选中状态下的图标-->
+        <attr name="bb_iconSelected" format="reference"/>
+
+        <!--底部文字-->
+        <attr name="bb_itemText" format="string"/>
+        <!--文字大小-->
+        <attr name="bb_itemTextSize" format="dimension"/>
+        <!--默认状态下的文字颜色-->
+        <attr name="bb_textColorNormal" format="color"/>
+        <!--选中状态下的文字颜色-->
+        <attr name="bb_textColorSelected" format="color"/>
+
+        <!--文字和图标的顶部距离-->
+        <attr name="bb_itemMarginTop" format="dimension"/>
+
+        <!--是否开启触摸背景效果-->
+        <attr name="bb_openTouchBg" format="boolean"/>
+        <!--设置触摸背景-->
+        <attr name="bb_touchDrawable" format="reference"/>
+
+        <!--设置图标的宽度-->
+        <attr name="bb_iconWidth" format="dimension"/>
+        <!--设置图标的高度-->
+        <attr name="bb_iconHeight" format="dimension"/>
+
+        <!--设置BottomBarItem的padding-->
+        <attr name="bb_itemPadding" format="dimension"/>
+
+        <!--设置未读数字体大小-->
+        <attr name="bb_unreadTextSize" format="dimension"/>
+        <!--设置未读数字体颜色-->
+        <attr name="bb_unreadTextColor" format="reference"/>
+        <!--设置未读数背景色-->
+        <attr name="bb_unreadTextBg" format="reference"/>
+
+        <!--设置提示消息字体大小-->
+        <attr name="bb_msgTextSize" format="dimension"/>
+        <!--设置提示消息字体颜色-->
+        <attr name="bb_msgTextColor" format="reference"/>
+        <!--设置提示消息背景-->
+        <attr name="bb_msgTextBg" format="reference"/>
+
+        <!--设置提示点背景-->
+        <attr name="bb_notifyPointBg" format="reference"/>
+
+        <!--设置未读数组阈值 大于阈值的数字将显示为 n+ n为设置的阈值-->
+        <attr name="bb_unreadThreshold" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="BottomBarLayout">
+        <!--若添加了viewPager True to smoothly scroll to the new item, false to transition immediately-->
+        <attr name="bb_smoothScroll" format="boolean"/>
+    </declare-styleable>
+
+</resources>
